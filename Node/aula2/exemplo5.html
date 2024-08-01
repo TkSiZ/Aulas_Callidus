@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>IF - ELSE</title>
+    </head>
+    <body>
+        <p> Eu estou pensando em uma letra. Adivinha qual é: a, b, c, d ou e?</p>
+
+        <input id="myInput" type="text">
+        <button onclick="myFunction()"> Clica em mim</button>
+
+        <p id="demo"> </p>
+        <script>
+            function myFunction(){
+                var letter = document.getElementById("myInput").value;
+                var text;
+
+                if(letter === "c"){
+                    text = "Acertou, miseravi";
+
+                }
+
+                else if(letter === "b" || letter == "d"){
+                    text = "Passou assoprando o cu da bunda";
+                }
+
+                else{
+                    text = "Chute merda";
+                }
+
+                document.getElementById("demo").innerHTML = text;
+            }
+
+
+
+        </script>
+    </body>
+</html>

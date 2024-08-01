@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>exemplo3</title>
+    </head>
+    <body>
+        <h1>Página Listener</h1>
+        <p>Página com vários eventos</p>
+        <button id="myBtn">Clica em mim vai</button>
+
+        <p id="demo"></p>
+
+        <script>
+            const element = document.getElementById("myBtn");
+            element.addEventListener("click", myFunction);
+            element.addEventListener("mouseover", mySecondFunction);
+            element.addEventListener("mouseout", myThirdFunction);
+
+            function myFunction()
+            {
+                document.getElementById("demo").innerHTML += "clicado <br>"
+            }
+
+            function mySecondFunction()
+            {
+                document.getElementById("demo").innerHTML += "Mouse over <br>"
+            }
+
+            function myThirdFunction()
+            {
+                document.getElementById("demo").innerHTML += "Mouse out <br>"
+            }
+
+        </script>
+    </body>
+</html>

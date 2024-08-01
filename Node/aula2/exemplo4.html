@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Script data exemplo4</title>
+    </head>
+    <body>
+        <h1> JavaScript com IF</h1>
+
+        <p> Mostrar BOM DIA if a for antes das 18h, BOA NOITE, caso o contrário</p>
+        <p id="demo"></p>
+
+        <script>
+            let hour = new Date().getHours();
+            if(hour < 18){
+                document.getElementById("demo").innerHTML += "Bom dia!!!!!!!!<br>"
+            }
+            else{
+                document.getElementById("demo").innerHTML += "Boa noite eiiita que soninho bom"
+            }
+            
+        </script>
+    </body>
+</html>

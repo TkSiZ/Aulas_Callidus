@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title> eventlistener</title>
+    </head>
+    <body>
+        <h1> Página com eventlistener</h1>
+        <h2> Teste de eventos</h2>
+        <p> Clique em qualquer lugar da página para mostrar "Hello world"</p>
+         <p id="demo"></p>
+         <script>
+            document.addEventListener("click", myfunction);
+
+            function myfunction()
+            {
+                document.getElementById("demo").innerHTML = "Olá mundo caralho"
+            }
+         </script>
+    </body>
+</html>
