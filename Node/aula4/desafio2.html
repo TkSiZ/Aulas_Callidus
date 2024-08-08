@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo da Média</title>
+    <script>
+        function calcularMedia() {
+            // Obtendo os valores dos campos de entrada
+            let valor1 = parseFloat(document.getElementById("valor1").value);
+            let valor2 = parseFloat(document.getElementById("valor2").value);
+            let valor3 = parseFloat(document.getElementById("valor3").value);
+            
+            // Verificando se os valores são números válidos
+            if (isNaN(valor1) || isNaN(valor2) || isNaN(valor3)) {
+                alert("Por favor, insira números válidos.");
+                return;
+            }
+
+            // Calculando a média
+            let media = (valor1 + valor2 + valor3) / 3;
+
+            // Exibindo o resultado
+            document.getElementById("resultado").innerText = "Média: " + media.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <form onsubmit="event.preventDefault(); calcularMedia();">
+        <label for="valor1">Valor 1:</label>
+        <input type="text" id="valor1" name="valor1"><br><br>
+
+        <label for="valor2">Valor 2:</label>
+        <input type="text" id="valor2" name="valor2"><br><br>
+
+        <label for="valor3">Valor 3:</label>
+        <input type="text" id="valor3" name="valor3"><br><br>
+
+        <button type="submit">Calcular Média</button>
+    </form>
+
+    <h2 id="resultado"></h2>
+</body>
+</html>

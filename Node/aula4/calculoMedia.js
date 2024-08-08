@@ -1,0 +1,1 @@
+let nota = window.document.querySelector("#resposta1")
