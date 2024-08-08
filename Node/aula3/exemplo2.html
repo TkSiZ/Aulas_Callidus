@@ -1,0 +1,22 @@
+<html> 
+    <head>
+        <title> Outro For</title>
+    </head>
+    <body>
+        <h2> Exemplo FOR</h2>
+
+        <p id="demo"></p>
+
+        <script>
+            const cars = ["BMW", "Volvo", "Ford", "Fiat", "VW", "Audi"];
+
+            let text = "";
+            for(let i = 0; i < cars.length; i++)
+            {
+                text += cars[i] + "<br>"
+            }
+
+            document.getElementById("demo").innerHTML = text;
+        </script>
+    </body>
+</html>

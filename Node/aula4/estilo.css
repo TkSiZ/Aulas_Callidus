@@ -1,0 +1,21 @@
+body
+{
+    background-color: bisque;
+}
+
+
+
+h1
+{
+    color: aqua;
+    font-family: Verdana;
+    font-size: 300%;
+}
+
+p
+{
+    color:blue;
+    font-family: Courier;
+    font-size: 160%;
+    border: 2px solid green;
+}

@@ -1,0 +1,16 @@
+.myDiv
+{
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+    left: 10px;
+    top: 50px;
+}
+
+.Div 
+{
+    border: 5px outset blue;
+    background-color: orange;
+    position: absolute;
+    top: 500px;
+}
