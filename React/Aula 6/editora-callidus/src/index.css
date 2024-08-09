@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+table, th{
+    border-collapse: collapse; /*define a separação entre as bordar*/
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgb(160 160 160);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+td{
+    border-collapse: collapse; /*define a separação entre as bordar*/
+    padding: 20px;
+    text-align: center;
+    border: 1px solid rgb(160 160 160);
+    background-color: rgb(169, 255, 236) ;
+}
+
+th{
+    background-color: lightgray;
+}
+
+.botaoRemover{
+    border-radius: 20px;
+    background-color: white;
+
+}
+
+.botaoRemover:hover{
+    background-color: red;
+    color: white;
+    transform: scale(1.2)
 }
