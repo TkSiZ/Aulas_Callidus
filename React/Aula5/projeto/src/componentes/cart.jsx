@@ -12,7 +12,21 @@ export default class Cart extends React.Component {
         }
     }
 
+    calculateTotal = () => {
+        return this.state.products.reduce((total, product) => {
+            return total + product.price * product.quantity;
+        }, 0);
+    };
+
     render() {
+        //calcular total 
+        const totalAmount = this.calculateTotal();
+        //Formatar o total como moeda
+        const formattedTotal = totalAmount.toLocaleString("pt-BR", {
+            style: "currency",
+            currency: "BRL",
+        });
+
         return (
             <div className="products">
                {this.state.products.map((product) => (
@@ -29,6 +43,9 @@ export default class Cart extends React.Component {
                     </div> 
                 </div>
                 ))}
+                <div className="total">
+                    <h2>Total: {formattedTotal} </h2>
+                </div>
         </div>
         );
     }
