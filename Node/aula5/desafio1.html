@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <title> Desafio 1</title>
+    </head>
+
+    <body>
+        <script>
+            minhaFuncao()
+            {
+                class pessoa{
+                    constructor(){
+                        nome:"";
+                        idade: 0; 
+                        escolaridade: "";
+                        transporte: [];
+                    }
+
+                    escolaridade(){
+                        var radios = document.getElementsByName('opcao');
+                        var selecionado;
+
+                        for(let i = 0; i < radios.length; i++){
+                            if(radios[i].checked){
+                                selecionado = radios[i];
+                                break;  
+                            }
+                            this.escolaridade = selecionado;
+                        }
+                    }
+
+                    transporte(){
+                        var radios = document.getElementsByName('transporte');
+
+                        for(let i = 0; i < radios.length; i++){
+                            if(radios[i].checked){
+                                this.transporte.push(radios[i]);
+                            }
+                        }
+                    }
+                };
+
+                usuario = new Pessoa;
+                usuario.nome = document.getElementById('nome').value;
+                usuario.idade = document.getElementById('idade').value;
+                usuario.escolaridade();
+                usuario.transporte();
+
+                console.log(usuario)
+            };
+        </script>
+
+
+        <label for="nome"> Nome:</label>
+        <input id="nome" type="text">
+        <br>
+        <br>
+        <label for="idade"> Idade:</label>
+        <input id="idade" type="text">
+
+        <div id="radio_escolaridade"> 
+            <p> Selecione sua escolaridade:</p>
+            <input id="primeirograu" type="radio" name="opcao" value="PrimeiroGrau">
+            <lable for="primeirograu"> Primeiro Grau</lable><br>
+            <input id="segundograu" type="radio" name="opcao" value="SegundoGrau">
+            <lable for="segundograu"> Segundo Grau</lable><br>
+            <input id="terceirograu" type="radio" name="opcao" value="TerceiroGrau">
+            <lable for="terceirograu"> Terceiro Grau</lable><br>
+            <br>
+    
+        </div>
+
+        <div id="checkbox_transporte">
+            <p>Qual o seu meio de transporte?</p>
+            <input type="checkbox" id="transportePublico" name="transporte">
+            <label for="transportePublico"> Transporte Público</label><br>
+            <input type="checkbox" id="transporteParticular" name="transporte">
+            <label for="transporteParticular"> Transporte Particular</label><br>
+            <input type="checkbox" id="pe" name="transporte">
+            <label for="pe"> À pé</label><br>
+            <input type="checkbox" id="bicicleta" name="transporte">
+            <label for="bicicleta">Bicicleta</label><br><br>
+        </div>
+
+        <button onclick="minhaFuncao()"> Enviar</button>
+
+    </body>
+</html>

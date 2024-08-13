@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title> Primeiro Objeto</title>
+    </head>
+    <body>
+
+        <p id="demo"> </p>
+         <script>
+            const pessoa = {
+                firstname: "John",
+                lastname: "Doe",
+                age: 50,
+                eyeColor:"Blue"
+            };
+
+            /* criando atributo fora do objeto 
+            const pessoa = {};
+            pessoa.firstName = "John",
+            pessoa.lastName = "Doe", 
+            pessoa.age = 50,
+            pessoa.eyeColor = "Blue"*/
+
+            /*outra forma de criar uma classe
+            const pessoa = new Object();
+            pessoa.firstName = "John",
+            pessoa.lastName = "Doe", 
+            pessoa.age = 50,
+            pessoa.eyeColor = "Blue"*/
+
+
+            const x = pessoa;
+            x.age = 10;
+
+
+
+            document.getElementById("demo").innerHTML = pessoa.age;   
+         </script>
+    </body>
+</html>
