@@ -1,30 +1,33 @@
-table, th{
-    border-collapse: collapse; /*define a separação entre as bordar*/
-    padding: 20px;
+/* Estilos básicos da tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
     text-align: center;
-    border: 1px solid rgb(160 160 160);
 }
 
-td{
-    border-collapse: collapse; /*define a separação entre as bordar*/
-    padding: 20px;
-    text-align: center;
-    border: 1px solid rgb(160 160 160);
-    background-color: rgb(169, 255, 236) ;
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
 }
 
-th{
-    background-color: lightgray;
-}
-
-.botaoRemover{
-    border-radius: 20px;
-    background-color: white;
-
-}
-
-.botaoRemover:hover{
-    background-color: red;
+th {
+    background-color: #4CAF50;
     color: white;
-    transform: scale(1.2)
 }
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+tr:hover {
+    background-color: #ddd;
+}
+
+td {
+    text-align: center;
+}
+
+
