@@ -6,24 +6,27 @@ import TabelaFoot from './components/TabelaFoot';
 class App extends Component {
 
   state = {
-    livros:[
-      {
-        id:"978-85-7522-632-2",
-        titulo:"CSS Grid Layout",
-        autor:"Maruício Samy Silva"
-      },
-      {
-        id:"978-85-7522-992-1",
-        titulo:"Node Essencial",
-        autor:"Matheus Takashi Maruoka Vieira"
-      },
-      {
-        id:"978-85-7522-521-7",
-        titulo:"Aprendendo Material Design",
-        autor:"Kyle Mew"
-      },
-    ]
+    livros:[]
   };
+  
+  //montagem do componente
+  componentDidMount(){
+    fetch("/api/livros.json")
+    .then(response => response.json())
+    .then(livros => this.setState({livros}))
+    .catch(function(error){
+      console.log("Erro na requisição");
+    })
+    .finally(function(){
+      console.log("Requisição finalizada - sempre retorna");
+    }); 
+  }
+
+
+  handleRemoverLinha = (id) => {
+    const livros = this.state.livros.filter(livro => livro.id !== id) 
+    this.setState({livros});
+  }
 
   render() {
     return (
@@ -31,7 +34,13 @@ class App extends Component {
         <h1>Tabela de Livros</h1>
         <table>
           <TabelaHead />
-          <TabelaBody livros={this.state.livros} />
+          <TabelaBody 
+            livros={this.state.livros}
+            
+            // funcao chama o manipulador de eventos
+
+            removerlinha = {this.handleRemoverLinha}
+            />
           <TabelaFoot qdelivros = {this.state.livros.length}/>
         </table>
       </div>
