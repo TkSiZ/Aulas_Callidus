@@ -28,18 +28,40 @@ class App extends Component {
     this.setState({livros});
   }
 
+  handleOrdenarCrescente = () => {
+    const livros = [...this.state.livros]; 
+    livros.sort((a, b) => a.titulo.localeCompare(b.titulo)); 
+    this.setState({ livros }); 
+};
+
+
+
+  handleOrdenarDescrecente = () => {
+    const livros = [...this.state.livros]
+    livros.sort((a, b) => b.titulo.localeCompare(a.titulo));
+    this.setState({ livros }); 
+  }
+
+
   render() {
     return (
       <div>
         <h1>Tabela de Livros</h1>
         <table>
-          <TabelaHead />
+          <TabelaHead
+
+          ordenarCrescente = {this.handleOrdenarCrescente}
+          ordenarDecrescente = {this.handleOrdenarDescrecente}
+
+           />
+
           <TabelaBody 
             livros={this.state.livros}
             
             // funcao chama o manipulador de eventos
 
             removerlinha = {this.handleRemoverLinha}
+
             />
           <TabelaFoot qdelivros = {this.state.livros.length}/>
         </table>
