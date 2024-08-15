@@ -22,6 +22,39 @@ class App extends Component {
     });
   }
 
-  
+  handleOrdenarCrescente = () => {
+    const filmes = [...this.state.filmes]; 
+    filmes.sort((a, b) => a.Title.localeCompare(b.Title)); 
+    this.setState({ filmes }); 
+};
 
+
+
+  handleOrdenarDescrecente = () => {
+    const filmes = [...this.state.filmes]
+    filmes.sort((a, b) => b.Title.localeCompare(a.Title));
+    this.setState({ filmes }); 
+};
+
+  render() {
+    return (
+      <div>
+        <h1>Cartaz de Filmes e Séries</h1>
+        <table>
+          <TabelaHead
+          ordenarCrescente = {this.handleOrdenarCrescente}
+          ordenarDecrescente = {this.handleOrdenarDescrecente}
+          />
+          <TabelaBody
+          filmes = {this.state.filmes}
+          
+          />
+        </table>
+      </div>
+    );
+  }
 }
+
+export default App;
+
+

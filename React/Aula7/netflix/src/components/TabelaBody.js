@@ -2,14 +2,10 @@ import React from 'react'
 
 const TabelaBody = props => (
     <tbody>
-        {props.livros.map((livro, index) => (
-            <tr key={livro.id}>
-                <td>{livro.id}</td>
-                <td>{livro.titulo}</td>
-                <td>{livro.autor}</td>
-                <td>
-                    <button className='botaoRemover' onClick={() => props.removerlinha(livro.id)} id={livro.id}>Remover</button>
-                </td>
+        {props.filmes.map((filme) => (
+            <tr key={filme.Title}>
+                <td><img src={filme.Poster} alt="Cartaz" width={200}/></td>
+                <td>{filme.Title}</td>
             </tr>
         ))}
     </tbody>
