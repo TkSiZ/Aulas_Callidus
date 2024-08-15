@@ -1,36 +1,122 @@
-/* Estilos do Cabeçalho da Tabela */
+/* Estilos Globais */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Estilos da Tabela */
 table {
   width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
   border-collapse: collapse;
-  margin: 20px 0;
-  font-size: 16px;
-  font-family: 'Arial', sans-serif;
-  text-align: left;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 table thead th {
-  background-color: #34495e;
-  color: #fff;
-  padding: 12px 15px;
-  border-bottom: 2px solid #2c3e50;
-  position: relative;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 16px 20px;
+  border-bottom: 3px solid #1a252f;
+  text-align: left;
+  font-size: 18px;
   white-space: nowrap;
+  position: sticky; /* Manter o cabeçalho fixo ao rolar */
+  top: 0;
+  z-index: 2;
+}
+
+table tbody td {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f2f2f2;
+}
+
+table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Estilos Específicos */
+.detalhes {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  font-size: 14px;
+  color: #2980b9;
 }
 
 .container-setlinhas {
   display: flex;
   align-items: center;
-  gap: 5px; /* Espaçamento entre as setas */
+  gap: 8px; /* Espaçamento entre as setas */
   font-size: 18px;
+  color: #2c3e50;
 }
 
 .container-setlinhas div {
   cursor: pointer;
-  padding: 5px;
+  padding: 8px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .container-setlinhas div:hover {
-  background-color: #95a5a6;
+  background-color: #ecf0f1;
+  transform: translateY(-2px);
+}
+
+/* Estilos dos Botões */
+button {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #34495e;
+  color: #ecf0f1;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: block; /* Alinhar botão com a tabela */
+  margin: auto; /* Centralizar o botão na célula */
+}
+
+button:hover {
+  background-color: #2c3e50;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #1a252f;
+  transform: translateY(0);
+}
+
+/* Botões de Ordenação Alfabética */
+.ordem-alfabetica {
+  background-color: #34495e;
+  color: #ecf0f1;
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.ordem-alfabetica:hover {
+  background-color: #2c3e50;
 }

@@ -22,6 +22,12 @@ class App extends Component {
     });
   }
 
+
+  handleRemoverLinha = (Title) => {
+    const filmes = this.state.filmes.filter(filme => filme.Title !== Title) 
+    this.setState({filmes});
+  }
+
   handleOrdenarCrescente = () => {
     const filmes = [...this.state.filmes]; 
     filmes.sort((a, b) => a.Title.localeCompare(b.Title)); 
@@ -47,6 +53,8 @@ class App extends Component {
           />
           <TabelaBody
           filmes = {this.state.filmes}
+
+          removerlinha = {this.handleRemoverLinha}
           
           />
         </table>
