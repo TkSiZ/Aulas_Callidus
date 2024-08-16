@@ -2,7 +2,7 @@ import React from 'react'
 
 const TabelaHead = props => (
     <thead>
-        <tr>
+        <tr id=''>
             <th>Cartaz</th>
             <th>Título
             <div className='container-setlinhas'>

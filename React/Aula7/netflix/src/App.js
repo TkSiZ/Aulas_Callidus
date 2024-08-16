@@ -57,6 +57,8 @@ class App extends Component {
           removerlinha = {this.handleRemoverLinha}
           
           />
+
+          <TabelaFoot/>
         </table>
       </div>
     );

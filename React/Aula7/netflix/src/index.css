@@ -52,6 +52,12 @@ table tbody tr:last-child td {
   border-bottom: none;
 }
 
+table tfoot tr{
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+}
 /* Estilos Específicos */
 .detalhes {
   font-family: 'Courier New', Courier, monospace;
@@ -82,7 +88,8 @@ table tbody tr:last-child td {
 
 /* Estilos dos Botões */
 button {
-  text-align: center;
+  /* text-align: center; */
+  margin-top: 140px;
   padding: 10px 20px;
   background-color: #34495e;
   color: #ecf0f1;
@@ -91,9 +98,9 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  display: block; /* Alinhar botão com a tabela */
-  margin: auto; /* Centralizar o botão na célula */
+  display: inline-block;
 }
+
 
 button:hover {
   background-color: #2c3e50;
