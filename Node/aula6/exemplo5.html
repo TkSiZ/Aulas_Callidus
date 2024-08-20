@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Exemplo do escreve salva escreve</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td> Texto para salvar</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <textarea id="inputTextToSave" cols="80" rows="25"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td> Arquivo para salvar como: </td>
+                <td> <input id="inputFileNameToSaveAs"></td>
+                <td><button onclick='savetextAsFile()'>Salvar Texto</button></td>
+            </tr>
+        </table>
+        
+        <script>
+            function savetextAsFile(){
+                var textToSave = document.getElementById('inputTextToSave').value;
+                var textToSaveAsBlob = new Blob([textToSave], {type: 'text/plain'});
+                var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
+                var fileNameToSaveAs = document.getElementById("inputFileNameToSaveAs").value;
+
+                var downloadLink = document.createElement("a");
+                downloadLink.download = fileNameToSaveAs;
+                downloadLink.innerHTML = "Download File";
+                downloadLink.href = textToSaveAsURL;
+                downloadLink.onclick =  destroyClickedelement;
+                downloadLink.style.display = "none";
+                document.body.appendChild(downloadLink);
+                downloadLink.click();
+            }
+            function destroyClickedelement(event){
+                document.body.removeChild(event.target)
+            }
+        </script>
+    </body>
+</html>
