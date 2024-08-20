@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Title of the Documento</title>
+    </head>
+    <body>
+        <script>
+            let link = document.createElement('a');
+            link.download = 'teste de JS.txt';
+            let blob = new Blob(['Bem vindo'], {type:'text/plain'});
+            link.href = URL.createObjectURL(link.href);
+            link.click();
+            // Isso é bom pra remover o cache e nao deixar os dados de quem usou anteriormente 
+            // Não é obrigatório, mas é importante
+            URL.revokeObjectURL(link.href);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+    <head>
+        <title>File com Blob</title>
+    </head>
+    <body>
+        <a download="teste de JS.txt" href="#" id="link">Download</a>
+        <script>
+            let blob = new Blob(["Aula de JS"], {type:'text/plain'});
+            link.href = URL.createObjectURL(blob);
+        </script>
+    </body>
+</html>

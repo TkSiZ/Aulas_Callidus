@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>Exemplo 3</title>
+    </head>
+    <body>
+        <input type="file" name="inputfile" id="inputfile">
+        <br>
+        <pre id="output"> </pre>
+        <script>
+            document.getElementById("inputfile").addEventListener('change', function(){
+                var file = new FileReader();
+                file.onload=()=>{
+                    document.getElementById("output").textContent = file.result;
+                }
+                file.readAsText(this.files[0])
+            });
+        </script>
+    </body>
+</html>

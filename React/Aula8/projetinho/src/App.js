@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Topo from './components/Topo';
+import Topo from './components/topo';
 import {Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Frontend from './components/Frontend';
-import Programacao from './components/Programacao';
-import Design from './components/Design';
+import Frontend from './components/frontend';
+import Programacao from './components/programacao';
+import Design from './components/design';
 import NotFound from './components/NotFound';
-import Catalogo from './components/Catalogo'; 
-import Home from './components/Home'
+import Home from './components/home'
+import Catalogo from './components/catalogo';
 
 class App extends Component{
   render(){
@@ -15,10 +15,10 @@ class App extends Component{
         <>
           <Topo/>
           <Routes>
-            <Route path='/Home' element={<Home/>}></Route>
-            <Route path='/Frontend' element={<Frontend/>}></Route>
-            <Route path='/Design' element={<Design/>}></Route>
-            <Route path='/Programacao' element={<Programacao/>}></Route>
+            <Route path='/home' element={<Home/>}></Route>
+            <Route path='/frontend' element={<Frontend/>}></Route>
+            <Route path='/design' element={<Design/>}></Route>
+            <Route path='/programacao' element={<Programacao/>}></Route>
             <Route path='/Catalogo' element={<Catalogo/>}></Route>
             <Route path='/NotFound' element={<NotFound/>}></Route>
           </Routes>

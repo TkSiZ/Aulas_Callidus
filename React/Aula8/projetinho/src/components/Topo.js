@@ -1,6 +1,6 @@
 import React from 'react';
-import Logo from './Logo';
-import Navegacao from './Navegacao';
+import Logo from './logo'
+import Navegacao from "./navegacao";
 
 const Topo = () => {
     return (

@@ -1,14 +1,14 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React from "react"
+import { Link } from "react-router-dom";
 
-const Logo = () => {
+const logo = () => {
     return (
-        <Link to='#'>
-            <h1 className='logo'>
+        <Link to="#">
+            <h1 className="logo">
                 <span>Editora Callidus</span>
             </h1>
         </Link>
     );
 }
 
-export default Logo;
+export default logo;
