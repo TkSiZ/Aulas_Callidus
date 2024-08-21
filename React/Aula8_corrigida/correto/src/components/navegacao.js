@@ -11,7 +11,7 @@ const Navegacao = () => {
     return (
         <ul>
             <li>
-                <NavLink to ="/" style={linkCorrente}>Home</NavLink>
+                <NavLink to ="/home" style={linkCorrente}>Home</NavLink>
             </li>
             <li>
                 <NavLink to ="/frontend" style={linkCorrente}>Frontend</NavLink>
