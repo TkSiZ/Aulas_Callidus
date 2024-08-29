@@ -5,6 +5,9 @@ var fs = require('fs');
 http.createServer(function(req, resp){
     var q = url.parse(req.url, true);
     var filename = "." + q.pathname;
+    if(filename === './'){
+        filename = './summer.html';
+    }
     fs.readFile(filename, function(err, data){
         if(err){
             resp.writeHead(404, {'Content-Type': 'text/html'})
