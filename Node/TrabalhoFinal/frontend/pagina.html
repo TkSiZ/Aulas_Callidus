@@ -3,52 +3,73 @@
 <head>
     <title>Formulário</title>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    <div class="titulo">
-        <h3>Formulário</h3>
-    </div>
     <div class="Formulario">
+        <!-- Título do formulário -->
+        <div class="titulo">
+            <h3>Formulário</h3>
+        </div>
+
+        <!-- Formulário -->
         <form id="meuFormulario" onsubmit="submitForm(event)">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required><br>
+            <input type="text" id="nome" name="nome" required>
 
             <label for="idade">Idade:</label>
-            <input type="number" id="idade" name="idade" required><br>
+            <input type="number" id="idade" name="idade" required>
 
-            <label for="sexo">Sexo:</label>
-            <div class="sexo" id="sexo">
-                <input type="radio" id="masculino" name="genero" value="Masculino" required>
-                <label for="masculino">Masculino</label><br>
-                <input type="radio" id="feminino" name="genero" value="feminino">
-                <label for="feminino">Feminino</label><br>
-                <input type="radio" id="outro" name="genero" value="outro">
-                <label for="outro">Outro</label><br>
+            <!-- Grupo de rádio para "Sexo" -->
+            <div class="radio-group">
+                <label>Sexo:</label>
+                <label for="masculino">
+                    <input type="radio" id="masculino" name="genero" value="Masculino" required>
+                    Masculino
+                </label>
+                <label for="feminino">
+                    <input type="radio" id="feminino" name="genero" value="Feminino">
+                    Feminino
+                </label>
+                <label for="outro">
+                    <input type="radio" id="outro" name="genero" value="Outro">
+                    Outro
+                </label>
             </div>
 
-            <div class="cidade" id="cidade">
-                <label for="cit">Cidade:</label><br>
-                <select name="cidades" id="cit" required>
-                    <option value="">Selecione uma opção</option>
-                    <option value="manaus">Manaus</option>
-                    <option value="natal">Natal</option>
-                    <option value="portoVelho">Porto Velho</option>
-                    <option value="RioDeJaneiro">Rio de Janeiro</option>
-                    <option value="SaoPaulo">São Paulo</option>
-                </select>
+            <!-- Cidade -->
+            <label for="cidade">Cidade:</label>
+            <select name="cidades" id="cit" required>
+                <option value="">Selecione uma opção</option>
+                <option value="manaus">Manaus</option>
+                <option value="natal">Natal</option>
+                <option value="portoVelho">Porto Velho</option>
+                <option value="RioDeJaneiro">Rio de Janeiro</option>
+                <option value="SaoPaulo">São Paulo</option>
+            </select>
+
+            <!-- Grupo de rádio para "Escolaridade" -->
+            <div class="radio-group">
+                <label>Escolaridade:</label>
+                <label for="EdInf">
+                    <input type="radio" id="EdInf" name="escolaridade" value="EducacaoInfantil" required>
+                    Educação Infantil
+                </label>
+                <label for="EnsFund">
+                    <input type="radio" id="EnsFund" name="escolaridade" value="EnsFundamental">
+                    Ensino Fundamental
+                </label>
+                <label for="EnsMed">
+                    <input type="radio" id="EnsMed" name="escolaridade" value="EnsMedio">
+                    Ensino Médio
+                </label>
+                <label for="EnsSup">
+                    <input type="radio" id="EnsSup" name="escolaridade" value="EnsSuperior">
+                    Ensino Superior
+                </label>
             </div>
 
-            <label for="escol">Escolaridade:</label>
-            <div class="escolaridade" id="escol">
-                <input type="radio" id="EdInf" name="escolaridade" value="EducacaoInfantil" required>
-                <label for="EdInf">Educação Infantil</label><br>
-                <input type="radio" id="EnsFund" name="escolaridade" value="EnsFundamental">
-                <label for="EnsFund">Ensino Fundamental</label><br>
-                <input type="radio" id="EnsMed" name="escolaridade" value="EnsMedio">
-                <label for="EnsMed">Ensino Médio</label><br>
-                <input type="radio" id="EnsSup" name="escolaridade" value="EnsSuperior">
-                <label for="EnsSup">Ensino Superior</label><br>
-            </div>
+            <!-- Botão de envio -->
             <button type="submit">Enviar</button>
         </form>
     </div>
