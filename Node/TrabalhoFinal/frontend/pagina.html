@@ -1,25 +1,84 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Formulário</title>
-        <meta charset="UTF-8"
-        <script src='backend.js'></script>
-    </head>
-    <body>
-        <div class="titulo">
-            <h3>Formulário</h3>
-        </div>
-        <div class="Formulario">
-            <form>
-                <label for="name">Nome:</label>
-                <input type="text" id="nome" name="nome" required><br>
+<html lang="pt-BR">
+<head>
+    <title>Formulário</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div class="titulo">
+        <h3>Formulário</h3>
+    </div>
+    <div class="Formulario">
+        <form id="meuFormulario" onsubmit="submitForm(event)">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
 
-                <label for="idade">Idade:</label>
-                <input type="text" id="idade" name="idade" required>
+            <label for="idade">Idade:</label>
+            <input type="number" id="idade" name="idade" required><br>
 
-                <label for="sexo">Sexo:</label>
-                <input type=""
-            </form>
-        </div>
-    </body>
+            <label for="sexo">Sexo:</label>
+            <div class="sexo" id="sexo">
+                <input type="radio" id="masculino" name="genero" value="Masculino" required>
+                <label for="masculino">Masculino</label><br>
+                <input type="radio" id="feminino" name="genero" value="feminino">
+                <label for="feminino">Feminino</label><br>
+                <input type="radio" id="outro" name="genero" value="outro">
+                <label for="outro">Outro</label><br>
+            </div>
+
+            <div class="cidade" id="cidade">
+                <label for="cit">Cidade:</label><br>
+                <select name="cidades" id="cit" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="manaus">Manaus</option>
+                    <option value="natal">Natal</option>
+                    <option value="portoVelho">Porto Velho</option>
+                    <option value="RioDeJaneiro">Rio de Janeiro</option>
+                    <option value="SaoPaulo">São Paulo</option>
+                </select>
+            </div>
+
+            <label for="escol">Escolaridade:</label>
+            <div class="escolaridade" id="escol">
+                <input type="radio" id="EdInf" name="escolaridade" value="EducacaoInfantil" required>
+                <label for="EdInf">Educação Infantil</label><br>
+                <input type="radio" id="EnsFund" name="escolaridade" value="EnsFundamental">
+                <label for="EnsFund">Ensino Fundamental</label><br>
+                <input type="radio" id="EnsMed" name="escolaridade" value="EnsMedio">
+                <label for="EnsMed">Ensino Médio</label><br>
+                <input type="radio" id="EnsSup" name="escolaridade" value="EnsSuperior">
+                <label for="EnsSup">Ensino Superior</label><br>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById('nome').value;
+            const idade = document.getElementById('idade').value;
+            const genero = document.querySelector('input[name="genero"]:checked').value;
+            const cidade = document.getElementById('cit').value;
+            const escolaridade = document.querySelector('input[name="escolaridade"]:checked').value;
+
+            const logEntry = `nome=${encodeURIComponent(nome)}&idade=${encodeURIComponent(idade)}&genero=${encodeURIComponent(genero)}&cidade=${encodeURIComponent(cidade)}&escolaridade=${encodeURIComponent(escolaridade)}`;
+
+            fetch('/api/save-log', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: logEntry
+            })
+            .then(response => response.text())
+            .then(data => {
+                alert(data);
+            })
+            .catch(error => {
+                console.error('Erro ao salvar dados:', error);
+            });
+        }
+    </script>
+</body>
 </html>
